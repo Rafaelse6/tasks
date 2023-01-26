@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.rafaelsantos.task.model.Task;
 
@@ -20,8 +21,10 @@ public class TaskController {
 	}
 	
 	@GetMapping("/list")
-	public String list() {
-		return "list";
+	public ModelAndView list() {
+		ModelAndView mv = new ModelAndView("list");
+		mv.addObject("tasks", tasks);
+		return mv;
 	}
 	
 	@PostMapping("/create")

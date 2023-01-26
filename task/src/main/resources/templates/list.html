@@ -10,6 +10,21 @@
 </head>
 
 <body>
-    <span>Lista de Tarefas</span>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome a tarefa</th>
+      <th scope="col">Data de execução</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-th-each="task : ${tasks}">
+		<td data-th-text="${task.id}"></td>
+		<td data-th-text="${task.name}"></td>
+		<td data-th-text="${{task.date}}"></td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
